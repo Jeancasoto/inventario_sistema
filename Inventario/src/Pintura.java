@@ -1,4 +1,8 @@
-public class Pintura extends Producto{
+
+import java.io.Serializable;
+
+public class Pintura extends Producto implements Serializable{
+    public final long SerializableUID = 111L;
     private String Codigo;
     private String DescripcionP;
 

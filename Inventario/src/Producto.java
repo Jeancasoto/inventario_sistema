@@ -1,4 +1,8 @@
-public class Producto {
+
+import java.io.Serializable;
+
+public class Producto implements Serializable{
+    public final long SerializableUID = 666L;
     private String Id;
     private double Costo;
     private double Precio;
