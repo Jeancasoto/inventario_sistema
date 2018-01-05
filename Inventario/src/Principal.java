@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author David Mendoza
+ * @author David Mendoza & Jean Carlo Soto
  */
 public class Principal extends javax.swing.JFrame {
     
