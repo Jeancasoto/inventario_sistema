@@ -19,7 +19,7 @@ public class Principal extends javax.swing.JFrame {
      * Creates new form Principal
      */
     public Principal() {
-        Usuarios.add(new Usuario("JEANCA","PENE","PENE"));
+        Usuarios.add(new Usuario("JEANCA","PENE",Codificar("PENE")));
         initComponents();
     }
 
@@ -180,7 +180,7 @@ public class Principal extends javax.swing.JFrame {
                 existe = false;
             }
         }
-        if (existe && pf_login.getText().equals(Actual.getPassword())) {
+        if (existe && Codificar(pf_login.getText()).equals(Actual.getPassword())) {
             Inicio.pack();
             Inicio.setLocationRelativeTo(this);
             Inicio.setVisible(true);
@@ -206,6 +206,16 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel8MouseClicked
 
+    public String Codificar(String f){
+        String code = "";
+        for (int i = 0; i < f.length(); i++) {
+            char c = f.charAt(i);
+            int e = ((int)c);
+            code+=Integer.toBinaryString(e);
+        }
+        return code;
+    }
+    
     /**
      * @param args the command line arguments
      */
