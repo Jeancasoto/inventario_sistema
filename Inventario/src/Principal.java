@@ -19,7 +19,7 @@ public class Principal extends javax.swing.JFrame {
      * Creates new form Principal
      */
     public Principal() {
-        Usuarios.add(new Usuario("JEANCA","PENE",Codificar("PENE")));
+        Usuarios.add(new Usuario("JEANCA","PRUEBA",Codificar("PRUEBA")));
         initComponents();
     }
 
@@ -39,6 +39,7 @@ public class Principal extends javax.swing.JFrame {
         tf_Usuario = new javax.swing.JTextField();
         pf_login = new javax.swing.JPasswordField();
         jButton2 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
         Inicio = new javax.swing.JFrame();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -49,6 +50,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         Login.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        Login.setTitle("Login");
 
         jLabel4.setText("Usuario");
 
@@ -62,6 +64,8 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\david\\Desktop\\inventario_sistema\\Inventario\\Images\\user.png")); // NOI18N
+
         javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login.getContentPane());
         Login.getContentPane().setLayout(LoginLayout);
         LoginLayout.setHorizontalGroup(
@@ -69,7 +73,9 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(LoginLayout.createSequentialGroup()
                 .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(LoginLayout.createSequentialGroup()
-                        .addGap(82, 82, 82)
+                        .addGap(90, 90, 90)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3))
                     .addGroup(LoginLayout.createSequentialGroup()
                         .addGap(54, 54, 54)
@@ -89,7 +95,9 @@ public class Principal extends javax.swing.JFrame {
             LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
                 .addGap(34, 34, 34)
                 .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -104,6 +112,11 @@ public class Principal extends javax.swing.JFrame {
         );
 
         Inicio.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        Inicio.setTitle("Inicio");
+
+        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\david\\Desktop\\inventario_sistema\\Inventario\\Images\\motor.png")); // NOI18N
+
+        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\david\\Desktop\\inventario_sistema\\Inventario\\Images\\hammer-and-wrench.png")); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 40)); // NOI18N
         jLabel6.setText("FERRETERIA");
@@ -116,31 +129,32 @@ public class Principal extends javax.swing.JFrame {
         InicioLayout.setHorizontalGroup(
             InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InicioLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(27, 27, 27)
+                .addGroup(InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel7)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addGap(29, 48, Short.MAX_VALUE))
+                .addGap(38, 38, 38))
         );
         InicioLayout.setVerticalGroup(
             InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(InicioLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addGroup(InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6))
                 .addContainerGap(79, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema De Inventario");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 36)); // NOI18N
@@ -181,13 +195,14 @@ public class Principal extends javax.swing.JFrame {
             }
         }
         if (existe && Codificar(pf_login.getText()).equals(Actual.getPassword())) {
+            JOptionPane.showMessageDialog(Login, "Bienvenido "+Actual.getNombre());
             Inicio.pack();
             Inicio.setLocationRelativeTo(this);
             Inicio.setVisible(true);
             this.dispose();
             Login.dispose();
         } else {
-            JOptionPane.showMessageDialog(this, "El usuario "+ Actual.getUsuario() +" no se encuentra en la base de datos");
+            JOptionPane.showMessageDialog(Login, "El usuario "+ tf_Usuario.getText() +" no se encuentra en la base de datos");
             pf_login.setText("");
             tf_Usuario.setText("");
             Actual = null;
@@ -265,6 +280,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPasswordField pf_login;
     private javax.swing.JTextField tf_Usuario;
     // End of variables declaration//GEN-END:variables
