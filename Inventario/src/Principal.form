@@ -81,6 +81,9 @@
         <Component class="javax.swing.JTextField" name="tf_Usuario">
         </Component>
         <Component class="javax.swing.JPasswordField" name="pf_login">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pf_loginKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>

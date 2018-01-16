@@ -1,4 +1,5 @@
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -19,7 +20,7 @@ public class Principal extends javax.swing.JFrame {
      * Creates new form Principal
      */
     public Principal() {
-        Usuarios.add(new Usuario("JEANCA","PRUEBA",Codificar("PRUEBA")));
+        Usuarios.add(new Usuario("PUTITO","PRUEBA",Codificar("PRUEBA")));
         initComponents();
     }
 
@@ -55,6 +56,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel4.setText("Usuario");
 
         jLabel5.setText("Contraseña");
+
+        pf_login.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                pf_loginKeyReleased(evt);
+            }
+        });
 
         jButton2.setText("INGRESAR");
         jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -220,6 +227,35 @@ public class Principal extends javax.swing.JFrame {
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void pf_loginKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pf_loginKeyReleased
+        // TODO add your handling code here:
+        if(evt.getKeyChar()==KeyEvent.VK_ENTER){
+            boolean existe = false;
+            for (Usuario U : Usuarios) {
+                if (tf_Usuario.getText().equals(U.getUsuario())) {
+                    existe = true;
+                    Actual = U;
+                    break;
+                }else{
+                    existe = false;
+                }
+            }
+            if (existe && Codificar(pf_login.getText()).equals(Actual.getPassword())) {
+                JOptionPane.showMessageDialog(Login, "Bienvenido "+Actual.getNombre());
+                Inicio.pack();
+                Inicio.setLocationRelativeTo(this);
+                Inicio.setVisible(true);
+                this.dispose();
+                Login.dispose();
+            } else {
+                JOptionPane.showMessageDialog(Login, "El usuario "+ tf_Usuario.getText() +" no se encuentra en la base de datos");
+                pf_login.setText("");
+                tf_Usuario.setText("");
+                Actual = null;
+            }
+        }
+    }//GEN-LAST:event_pf_loginKeyReleased
 
     public String Codificar(String f){
         String code = "";
