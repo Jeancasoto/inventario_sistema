@@ -209,8 +209,8 @@ public class Principal extends javax.swing.JFrame {
             this.dispose();
             Login.dispose();
         } else {
-            JOptionPane.showMessageDialog(Login, "El usuario "+ tf_Usuario.getText() +" no se encuentra en la base de datos");
             pf_login.setText("");
+            JOptionPane.showMessageDialog(Login, "El usuario "+ tf_Usuario.getText() +" no se encuentra en la base de datos");
             tf_Usuario.setText("");
             Actual = null;
         }
@@ -230,7 +230,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void pf_loginKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pf_loginKeyReleased
         // TODO add your handling code here:
-        if(evt.getKeyChar()==KeyEvent.VK_ENTER){
+        if(evt.getKeyChar()==KeyEvent.VK_ENTER && pf_login.getText().length() > 0){
             boolean existe = false;
             for (Usuario U : Usuarios) {
                 if (tf_Usuario.getText().equals(U.getUsuario())) {
@@ -260,9 +260,7 @@ public class Principal extends javax.swing.JFrame {
     public String Codificar(String f){
         String code = "";
         for (int i = 0; i < f.length(); i++) {
-            char c = f.charAt(i);
-            int e = ((int)c);
-            code+=Integer.toBinaryString(e);
+            code+=Integer.toBinaryString(f.charAt(i));
         }
         return code;
     }
