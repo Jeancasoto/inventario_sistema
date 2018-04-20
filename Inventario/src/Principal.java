@@ -71,8 +71,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\david\\Desktop\\inventario_sistema\\Inventario\\Images\\user.png")); // NOI18N
-
         javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login.getContentPane());
         Login.getContentPane().setLayout(LoginLayout);
         LoginLayout.setHorizontalGroup(
@@ -120,10 +118,6 @@ public class Principal extends javax.swing.JFrame {
 
         Inicio.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         Inicio.setTitle("Inicio");
-
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\david\\Desktop\\inventario_sistema\\Inventario\\Images\\motor.png")); // NOI18N
-
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\david\\Desktop\\inventario_sistema\\Inventario\\Images\\hammer-and-wrench.png")); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 40)); // NOI18N
         jLabel6.setText("FERRETERIA");
@@ -183,6 +177,8 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, 330, 220));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/andromeda_galaxy_astronaut_art-wallpaper-1366x768.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 510));
 
         pack();
