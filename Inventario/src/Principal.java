@@ -41,6 +41,7 @@ public class Principal extends javax.swing.JFrame {
         pf_login = new javax.swing.JPasswordField();
         jButton2 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         Inicio = new javax.swing.JFrame();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -71,6 +72,8 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/user.png"))); // NOI18N
+
         javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login.getContentPane());
         Login.getContentPane().setLayout(LoginLayout);
         LoginLayout.setHorizontalGroup(
@@ -79,8 +82,10 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(LoginLayout.createSequentialGroup()
                         .addGap(90, 90, 90)
-                        .addComponent(jLabel9)
+                        .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel9)
+                        .addGap(106, 106, 106)
                         .addComponent(jLabel3))
                     .addGroup(LoginLayout.createSequentialGroup()
                         .addGap(54, 54, 54)
@@ -94,15 +99,18 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(LoginLayout.createSequentialGroup()
                         .addGap(109, 109, 109)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         LoginLayout.setVerticalGroup(
             LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
+                    .addGroup(LoginLayout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel10)))
                 .addGap(34, 34, 34)
                 .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -118,6 +126,10 @@ public class Principal extends javax.swing.JFrame {
 
         Inicio.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         Inicio.setTitle("Inicio");
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/motor.png"))); // NOI18N
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/hammer-and-wrench.png"))); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 40)); // NOI18N
         jLabel6.setText("FERRETERIA");
@@ -303,6 +315,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
